@@ -1,0 +1,22 @@
+menu "Interface Embedded"
+    config INTERFACE_EMBEDDED_ENABLED
+        bool "Enable"
+        default n
+
+    config INTERFACE_EMBEDDED_OSAL_ENABLED
+        bool "OSAL"
+        default n
+        depends on INTERFACE_EMBEDDED_ENABLED
+
+    choice
+        prompt "OSAL Backend"
+        depends on INTERFACE_EMBEDDED_OSAL_ENABLED
+        config INTERFACE_EMBEDDED_OSAL_FREERTOS
+            bool "FreeRTOS"
+        config INTERFACE_EMBEDDED_OSAL_POSIX
+            bool "POSIX"
+        config INTERFACE_EMBEDDED_OSAL_CPPSTD
+            bool "C++ Standard Library"
+    endchoice
+
+endmenu

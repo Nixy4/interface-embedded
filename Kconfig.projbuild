@@ -3,6 +3,22 @@ menu "Interface Embedded"
         bool "Enable"
         default n
 
+    config INTERFACE_EMBEDDED_LOGGER_ENABLED
+        bool "Logger"
+        default n
+        depends on INTERFACE_EMBEDDED_ENABLED
+
+    choice
+        prompt "Logger Backend"
+        depends on INTERFACE_EMBEDDED_LOGGER_ENABLED
+        config INTERFACE_EMBEDDED_LOGGER_ESP_LOG
+            bool "ESP Log"
+        config INTERFACE_EMBEDDED_LOGGER_PRINTF
+            bool "Printf"
+        # config INTERFACE_EMBEDDED_LOGGER_EASYLOGGER
+        #     bool "EasyLogger"
+    endchoice
+
     config INTERFACE_EMBEDDED_OSAL_ENABLED
         bool "OSAL"
         default n
@@ -13,9 +29,11 @@ menu "Interface Embedded"
         depends on INTERFACE_EMBEDDED_OSAL_ENABLED
         config INTERFACE_EMBEDDED_OSAL_FREERTOS
             bool "FreeRTOS"
+        config INTERFACE_EMBEDDED_OSAL_CMSIS_RTOS2
+            bool "CMSIS-RTOS V2"
         config INTERFACE_EMBEDDED_OSAL_POSIX
             bool "POSIX"
-        config INTERFACE_EMBEDDED_OSAL_CPPSTD
+        config INTERFACE_EMBEDDED_OSAL_CPP_STD
             bool "C++ Standard Library"
     endchoice
 

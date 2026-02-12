@@ -98,6 +98,9 @@ protected:
     }
 
   public:
+    LoggerAbility()
+
+
     template <typename... Args>
     void Verbose(const char *format, Args &&...args)
     {

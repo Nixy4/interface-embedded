@@ -4,13 +4,13 @@
 #include "osal/ability/dispatch.hpp"
 #include <cstdint>
 
-namespace osal {
+namespace ifce::os {
 
 template <typename Derived>
-class SemaphoreAbility : protected DispatchBase<Derived>
+class SemaphoreAbility : protected ifce::DispatchBase<Derived>
 {
   friend Derived;
-  using Base = DispatchBase<Derived>;
+  using Base = ifce::DispatchBase<Derived>;
 
 public:
   SemaphoreAbility()  = default;
@@ -57,4 +57,4 @@ public:
   }
 };
 
-} // namespace osal
+} // namespace ifce::os

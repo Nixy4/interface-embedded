@@ -4,12 +4,12 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/event_groups.h"
 
-namespace osal {
+namespace ifce::os {
 
 class EventFlags : public EventFlagsAbility<EventFlags>
 {
   friend class EventFlagsAbility<EventFlags>;
-  friend class DispatchBase<EventFlags>;
+  friend class ifce::DispatchBase<EventFlags>;
 
 public:
   EventFlags()  = default;
@@ -85,4 +85,4 @@ private:
   EventGroupHandle_t handle_ = nullptr;
 };
 
-} // namespace osal
+} // namespace ifce::os

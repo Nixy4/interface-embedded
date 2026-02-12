@@ -4,13 +4,13 @@
 #include "osal/ability/dispatch.hpp"
 #include <cstdint>
 
-namespace osal {
+namespace ifce::os {
 
 template <typename Derived>
-class MutexAbility : protected DispatchBase<Derived>
+class MutexAbility : protected ifce::DispatchBase<Derived>
 {
   friend Derived;
-  using Base = DispatchBase<Derived>;
+  using Base = ifce::DispatchBase<Derived>;
 
 public:
   MutexAbility()  = default;
@@ -56,4 +56,4 @@ public:
   }
 };
 
-} // namespace osal
+} // namespace ifce::os

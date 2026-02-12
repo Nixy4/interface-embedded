@@ -3,13 +3,13 @@
 #include "osal/ability/memory_pool.hpp"
 #include "cmsis_os2.h"
 
-namespace osal {
+namespace ifce::os {
 
 template <typename T>
 class MemoryPool : public MemoryPoolAbility<MemoryPool<T>, T>
 {
   friend class MemoryPoolAbility<MemoryPool<T>, T>;
-  friend class DispatchBase<MemoryPool<T>>;
+  friend class ifce::DispatchBase<MemoryPool<T>>;
 
 public:
   MemoryPool()  = default;
@@ -63,4 +63,4 @@ private:
   osMemoryPoolId_t id_ = nullptr;
 };
 
-} // namespace osal
+} // namespace ifce::os

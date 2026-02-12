@@ -5,12 +5,12 @@
 #include <ctime>
 #include <atomic>
 
-namespace osal {
+namespace ifce::os {
 
 class Timer : public TimerAbility<Timer>
 {
   friend class TimerAbility<Timer>;
-  friend class DispatchBase<Timer>;
+  friend class ifce::DispatchBase<Timer>;
 
 public:
   Timer()  = default;
@@ -115,4 +115,4 @@ private:
   std::atomic<bool> running_     {false};
 };
 
-} // namespace osal
+} // namespace ifce::os

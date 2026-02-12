@@ -3,12 +3,12 @@
 #include "osal/ability/event_flags.hpp"
 #include "cmsis_os2.h"
 
-namespace osal {
+namespace ifce::os {
 
 class EventFlags : public EventFlagsAbility<EventFlags>
 {
   friend class EventFlagsAbility<EventFlags>;
-  friend class DispatchBase<EventFlags>;
+  friend class ifce::DispatchBase<EventFlags>;
 
 public:
   EventFlags()  = default;
@@ -71,4 +71,4 @@ private:
   osEventFlagsId_t id_ = nullptr;
 };
 
-} // namespace osal
+} // namespace ifce::os

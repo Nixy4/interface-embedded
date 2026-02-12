@@ -2,7 +2,7 @@
 
 #include "osal/types.hpp"
 
-namespace osal {
+namespace ifce::os {
 
 /// RAII lock guard. Works with any type that has Lock(uint32_t) and Unlock() methods.
 template <typename MutexType>
@@ -37,4 +37,4 @@ private:
   bool       owned_;
 };
 
-} // namespace osal
+} // namespace ifce::os

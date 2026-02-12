@@ -6,13 +6,13 @@
 #include <cstddef>
 #include <new>
 
-namespace osal {
+namespace ifce::os {
 
 template <typename Derived, typename T>
-class MemoryPoolAbility : protected DispatchBase<Derived>
+class MemoryPoolAbility : protected ifce::DispatchBase<Derived>
 {
   friend Derived;
-  using Base = DispatchBase<Derived>;
+  using Base = ifce::DispatchBase<Derived>;
 
 public:
   MemoryPoolAbility()  = default;
@@ -65,4 +65,4 @@ public:
   }
 };
 
-} // namespace osal
+} // namespace ifce::os

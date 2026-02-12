@@ -4,12 +4,12 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/timers.h"
 
-namespace osal {
+namespace ifce::os {
 
 class Timer : public TimerAbility<Timer>
 {
   friend class TimerAbility<Timer>;
-  friend class DispatchBase<Timer>;
+  friend class ifce::DispatchBase<Timer>;
 
 public:
   Timer()  = default;
@@ -87,4 +87,4 @@ private:
   bool          auto_reload_ = false;
 };
 
-} // namespace osal
+} // namespace ifce::os

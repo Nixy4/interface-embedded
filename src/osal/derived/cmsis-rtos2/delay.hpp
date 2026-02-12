@@ -4,7 +4,7 @@
 #include "cmsis_os2.h"
 #include <cstdint>
 
-namespace osal {
+namespace ifce::os {
 
 inline void Delay(uint32_t ms)
 {
@@ -27,4 +27,4 @@ inline uint32_t GetTickFreq()
   return osKernelGetTickFreq();
 }
 
-} // namespace osal
+} // namespace ifce::os

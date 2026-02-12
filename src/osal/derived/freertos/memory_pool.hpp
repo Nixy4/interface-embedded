@@ -8,7 +8,7 @@
 #include <cstring>
 #include <new>
 
-namespace osal {
+namespace ifce::os {
 
 /// Fixed-block memory pool for FreeRTOS, implemented as a free-list
 /// protected by a FreeRTOS mutex.
@@ -16,7 +16,7 @@ template <typename T>
 class MemoryPool : public MemoryPoolAbility<MemoryPool<T>, T>
 {
   friend class MemoryPoolAbility<MemoryPool<T>, T>;
-  friend class DispatchBase<MemoryPool<T>>;
+  friend class ifce::DispatchBase<MemoryPool<T>>;
 
 public:
   MemoryPool()  = default;
@@ -130,4 +130,4 @@ private:
   size_t            block_size_  = 0;
 };
 
-} // namespace osal
+} // namespace ifce::os

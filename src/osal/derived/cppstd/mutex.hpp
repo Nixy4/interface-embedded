@@ -4,12 +4,12 @@
 #include <mutex>
 #include <chrono>
 
-namespace osal {
+namespace ifce::os {
 
 class Mutex : public MutexAbility<Mutex>
 {
   friend class MutexAbility<Mutex>;
-  friend class DispatchBase<Mutex>;
+  friend class ifce::DispatchBase<Mutex>;
 
 public:
   Mutex()  = default;
@@ -80,4 +80,4 @@ private:
   bool                           initialized_ = false;
 };
 
-} // namespace osal
+} // namespace ifce::os

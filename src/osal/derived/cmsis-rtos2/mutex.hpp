@@ -3,12 +3,12 @@
 #include "osal/ability/mutex.hpp"
 #include "cmsis_os2.h"
 
-namespace osal {
+namespace ifce::os {
 
 class Mutex : public MutexAbility<Mutex>
 {
   friend class MutexAbility<Mutex>;
-  friend class DispatchBase<Mutex>;
+  friend class ifce::DispatchBase<Mutex>;
 
 public:
   Mutex()  = default;
@@ -62,4 +62,4 @@ private:
   osMutexId_t id_ = nullptr;
 };
 
-} // namespace osal
+} // namespace ifce::os

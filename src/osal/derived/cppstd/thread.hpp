@@ -5,12 +5,12 @@
 #include <string>
 #include <atomic>
 
-namespace osal {
+namespace ifce::os {
 
 class Thread : public ThreadAbility<Thread>
 {
   friend class ThreadAbility<Thread>;
-  friend class DispatchBase<Thread>;
+  friend class ifce::DispatchBase<Thread>;
 
 public:
   Thread()  = default;
@@ -83,4 +83,4 @@ private:
   std::atomic<bool>  stop_requested_ {false};
 };
 
-} // namespace osal
+} // namespace ifce::os

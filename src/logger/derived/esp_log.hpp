@@ -8,12 +8,12 @@
 #include <string>
 #include <vector>
 
-namespace osal {
+namespace ifce::log {
 
 class Logger : public LoggerAbility<Logger>
 {
   friend class LoggerAbility<Logger>;
-  friend class DispatchBase<Logger>;
+  friend class ifce::DispatchBase<Logger>;
 
 public:
   Logger() { RebuildTag(); }
@@ -94,4 +94,4 @@ private:
   std::string suffix_    = " |";
 };
 
-} // namespace osal
+} // namespace ifce::log

@@ -6,12 +6,12 @@
 #include <cerrno>
 #include <atomic>
 
-namespace osal {
+namespace ifce::os {
 
 class EventFlags : public EventFlagsAbility<EventFlags>
 {
   friend class EventFlagsAbility<EventFlags>;
-  friend class DispatchBase<EventFlags>;
+  friend class ifce::DispatchBase<EventFlags>;
 
 public:
   EventFlags()  = default;
@@ -111,4 +111,4 @@ private:
   bool                  initialized_ = false;
 };
 
-} // namespace osal
+} // namespace ifce::os

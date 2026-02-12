@@ -6,13 +6,13 @@
 #include <deque>
 #include <chrono>
 
-namespace osal {
+namespace ifce::os {
 
 template <typename T>
 class MessageQueue : public MessageQueueAbility<MessageQueue<T>, T>
 {
   friend class MessageQueueAbility<MessageQueue<T>, T>;
-  friend class DispatchBase<MessageQueue<T>>;
+  friend class ifce::DispatchBase<MessageQueue<T>>;
 
 public:
   MessageQueue()  = default;
@@ -114,4 +114,4 @@ private:
   bool                    initialized_ = false;
 };
 
-} // namespace osal
+} // namespace ifce::os

@@ -4,12 +4,12 @@
 #include "cmsis_os2.h"
 #include <string>
 
-namespace osal {
+namespace ifce::os {
 
 class Thread : public ThreadAbility<Thread>
 {
   friend class ThreadAbility<Thread>;
-  friend class DispatchBase<Thread>;
+  friend class ifce::DispatchBase<Thread>;
 
 public:
   Thread()  = default;
@@ -88,4 +88,4 @@ private:
   ThreadPriority priority_ = ThreadPriority::Normal;
 };
 
-} // namespace osal
+} // namespace ifce::os

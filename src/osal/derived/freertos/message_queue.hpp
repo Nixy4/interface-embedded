@@ -4,13 +4,13 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/queue.h"
 
-namespace osal {
+namespace ifce::os {
 
 template <typename T>
 class MessageQueue : public MessageQueueAbility<MessageQueue<T>, T>
 {
   friend class MessageQueueAbility<MessageQueue<T>, T>;
-  friend class DispatchBase<MessageQueue<T>>;
+  friend class ifce::DispatchBase<MessageQueue<T>>;
 
 public:
   MessageQueue()  = default;
@@ -97,4 +97,4 @@ private:
   uint32_t      capacity_ = 0;
 };
 
-} // namespace osal
+} // namespace ifce::os

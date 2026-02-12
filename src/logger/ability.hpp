@@ -15,13 +15,13 @@
 #include <type_traits>
 #include <utility>
 
-namespace osal {
+namespace ifce::log {
 
 template <typename Derived>
-class LoggerAbility : protected DispatchBase<Derived>
+class LoggerAbility : protected ifce::DispatchBase<Derived>
 {
   friend Derived;
-  using Base = DispatchBase<Derived>;
+  using Base = ifce::DispatchBase<Derived>;
 
 protected:
   /// LogDispatch: invoke callable on Derived*, or printf fallback
@@ -139,4 +139,4 @@ public:
   }
 };
 
-} // namespace osal
+} // namespace ifce::log

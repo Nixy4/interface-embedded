@@ -5,13 +5,13 @@
 #include <condition_variable>
 #include <chrono>
 
-namespace osal {
+namespace ifce::os {
 
 /// Counting semaphore implemented with std::mutex + std::condition_variable (C++17 compatible)
 class Semaphore : public SemaphoreAbility<Semaphore>
 {
   friend class SemaphoreAbility<Semaphore>;
-  friend class DispatchBase<Semaphore>;
+  friend class ifce::DispatchBase<Semaphore>;
 
 public:
   Semaphore()  = default;
@@ -71,4 +71,4 @@ private:
   bool                    initialized_ = false;
 };
 
-} // namespace osal
+} // namespace ifce::os

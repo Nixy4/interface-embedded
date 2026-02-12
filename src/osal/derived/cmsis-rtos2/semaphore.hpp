@@ -3,12 +3,12 @@
 #include "osal/ability/semaphore.hpp"
 #include "cmsis_os2.h"
 
-namespace osal {
+namespace ifce::os {
 
 class Semaphore : public SemaphoreAbility<Semaphore>
 {
   friend class SemaphoreAbility<Semaphore>;
-  friend class DispatchBase<Semaphore>;
+  friend class ifce::DispatchBase<Semaphore>;
 
 public:
   Semaphore()  = default;
@@ -59,4 +59,4 @@ private:
   osSemaphoreId_t id_ = nullptr;
 };
 
-} // namespace osal
+} // namespace ifce::os

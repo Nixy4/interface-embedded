@@ -5,13 +5,13 @@
 #include <cstdint>
 #include <functional>
 
-namespace osal {
+namespace ifce::os {
 
 template <typename Derived>
-class ThreadAbility : protected DispatchBase<Derived>
+class ThreadAbility : protected ifce::DispatchBase<Derived>
 {
   friend Derived;
-  using Base = DispatchBase<Derived>;
+  using Base = ifce::DispatchBase<Derived>;
 
 public:
   ThreadAbility()  = default;
@@ -108,4 +108,4 @@ public:
   }
 };
 
-} // namespace osal
+} // namespace ifce::os

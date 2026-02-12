@@ -3,12 +3,12 @@
 #include "osal/ability/timer.hpp"
 #include "cmsis_os2.h"
 
-namespace osal {
+namespace ifce::os {
 
 class Timer : public TimerAbility<Timer>
 {
   friend class TimerAbility<Timer>;
-  friend class DispatchBase<Timer>;
+  friend class ifce::DispatchBase<Timer>;
 
 public:
   Timer()  = default;
@@ -84,4 +84,4 @@ private:
   uint32_t    period_ms_  = 0;
 };
 
-} // namespace osal
+} // namespace ifce::os

@@ -4,13 +4,13 @@
 #include "osal/ability/dispatch.hpp"
 #include <cstdint>
 
-namespace osal {
+namespace ifce::os {
 
 template <typename Derived, typename T>
-class MessageQueueAbility : protected DispatchBase<Derived>
+class MessageQueueAbility : protected ifce::DispatchBase<Derived>
 {
   friend Derived;
-  using Base = DispatchBase<Derived>;
+  using Base = ifce::DispatchBase<Derived>;
 
 public:
   MessageQueueAbility()  = default;
@@ -79,4 +79,4 @@ public:
   }
 };
 
-} // namespace osal
+} // namespace ifce::os

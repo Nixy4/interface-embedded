@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <functional>
 
-namespace osal {
+namespace ifce::os {
 
 /// Unified return status (aligned with osStatus_t semantics)
 enum class OsStatus : int32_t
@@ -44,4 +44,4 @@ inline int MapPriority(int normalized, int platform_min, int platform_max)
   return platform_min + (normalized * (platform_max - platform_min)) / 100;
 }
 
-} // namespace osal
+} // namespace ifce::os

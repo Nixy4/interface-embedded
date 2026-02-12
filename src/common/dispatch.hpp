@@ -13,7 +13,7 @@
 #include <type_traits>
 #include <utility>
 
-namespace osal {
+namespace ifce {
 
 /// CRTP base providing Dispatch / Query / Invoke helpers.
 /// Each Ability class should inherit this as `protected DispatchBase<Derived>`.
@@ -79,4 +79,4 @@ protected:
   }
 };
 
-} // namespace osal
+} // namespace ifce

@@ -4,13 +4,13 @@
 #include "osal/ability/dispatch.hpp"
 #include <cstdint>
 
-namespace osal {
+namespace ifce::os {
 
 template <typename Derived>
-class EventFlagsAbility : protected DispatchBase<Derived>
+class EventFlagsAbility : protected ifce::DispatchBase<Derived>
 {
   friend Derived;
-  using Base = DispatchBase<Derived>;
+  using Base = ifce::DispatchBase<Derived>;
 
 public:
   EventFlagsAbility()  = default;
@@ -66,4 +66,4 @@ public:
   }
 };
 
-} // namespace osal
+} // namespace ifce::os

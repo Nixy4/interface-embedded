@@ -5,7 +5,7 @@
 #include "freertos/task.h"
 #include <cstdint>
 
-namespace osal {
+namespace ifce::os {
 
 inline void Delay(uint32_t ms)
 {
@@ -29,4 +29,4 @@ inline uint32_t GetTickFreq()
   return configTICK_RATE_HZ;
 }
 
-} // namespace osal
+} // namespace ifce::os

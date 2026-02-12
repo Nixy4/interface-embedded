@@ -5,13 +5,13 @@
 #include <cstdint>
 #include <functional>
 
-namespace osal {
+namespace ifce::os {
 
 template <typename Derived>
-class TimerAbility : protected DispatchBase<Derived>
+class TimerAbility : protected ifce::DispatchBase<Derived>
 {
   friend Derived;
-  using Base = DispatchBase<Derived>;
+  using Base = ifce::DispatchBase<Derived>;
 
 public:
   TimerAbility()  = default;
@@ -67,4 +67,4 @@ public:
   }
 };
 
-} // namespace osal
+} // namespace ifce::os

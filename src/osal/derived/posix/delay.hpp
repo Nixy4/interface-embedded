@@ -5,7 +5,7 @@
 #include <cstdint>
 #include <unistd.h>
 
-namespace osal {
+namespace ifce::os {
 
 inline void Delay(uint32_t ms)
 {
@@ -44,4 +44,4 @@ inline uint32_t GetTickFreq()
   return 1000; // millisecond resolution
 }
 
-} // namespace osal
+} // namespace ifce::os

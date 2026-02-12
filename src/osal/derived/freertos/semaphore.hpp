@@ -4,12 +4,12 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/semphr.h"
 
-namespace osal {
+namespace ifce::os {
 
 class Semaphore : public SemaphoreAbility<Semaphore>
 {
   friend class SemaphoreAbility<Semaphore>;
-  friend class DispatchBase<Semaphore>;
+  friend class ifce::DispatchBase<Semaphore>;
 
 public:
   Semaphore()  = default;
@@ -81,4 +81,4 @@ private:
   SemaphoreHandle_t handle_ = nullptr;
 };
 
-} // namespace osal
+} // namespace ifce::os

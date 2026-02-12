@@ -6,12 +6,12 @@
 #include <functional>
 #include <string>
 
-namespace osal {
+namespace ifce::os {
 
 class Thread : public ThreadAbility<Thread>
 {
   friend class ThreadAbility<Thread>;
-  friend class DispatchBase<Thread>;
+  friend class ifce::DispatchBase<Thread>;
 
 public:
   Thread()  = default;
@@ -127,4 +127,4 @@ private:
   int            core_       = 0;
 };
 
-} // namespace osal
+} // namespace ifce::os
